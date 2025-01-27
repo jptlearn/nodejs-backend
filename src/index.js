@@ -1,4 +1,3 @@
-import express from "express";
 import { ENV_KEYS } from "./constants.js";
 import connectDB from "./db/index.js";
 import { app } from "./app.js";
