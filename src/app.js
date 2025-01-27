@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { APP_CONSTANTS, ENV_KEYS } from "./constants";
+import { APP_CONSTANTS, ENV_KEYS } from "./constants.js";
 
 const app = express();
 
@@ -17,5 +17,11 @@ app.use(
 );
 app.use(express.static("public"));
 app.use(cookieParser());
+
+// Routes import
+import userRouter from "./routes/userRoutes.js";
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
 
 export { app };
